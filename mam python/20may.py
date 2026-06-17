@@ -6,7 +6,7 @@ os.chdir(r"C:\Users\singh\OneDrive\Desktop\python'")
 #wap to read the nth line of file...
 
 n=15
-with open ("sample.txt") as file:
+with open ("../sample.txt") as file:
     for line_no, line in enumerate(file,start=1):
         if line_no==n:
             print(line)
@@ -15,7 +15,7 @@ print()
 #WAP to read first n lines...
 
 n=6
-with open("sample.txt")as file:
+with open("../sample.txt")as file:
     for line_no, line in enumerate(file,start=1):
         if line_no<=n:
             print(line)
@@ -27,26 +27,26 @@ print()
 #wap to read the nth line of file using islicing...
 from itertools import islice
 n=2
-with open ("sample.txt") as file:
+with open ("../sample.txt") as file:
     lines=islice(file,n-1,n)
     print(list(lines))
 
 #WAP to read first n lines...
 n=2
-with open("sample.txt")as file:
+with open("../sample.txt")as file:
     lines=islice(file,n)
     print(list(lines))
 
 #WAP to read 10th to 15th line from a file......
 start=10
 end=15
-with open("sample.txt")as file:
+with open("../sample.txt")as file:
     lines=islice(file,start-1,end)
     print(list(lines))
 
 #enumerate
 
-with open("sample.txt")as file:
+with open("../sample.txt")as file:
     for line_no,line in enumerate(file,start=1):
         if 10<=line_no<=15:
             print(line)
@@ -54,7 +54,7 @@ with open("sample.txt")as file:
 #WAP to read last n lines......
 
 n=4
-with open("sample.txt")as file:
+with open("../sample.txt")as file:
     lines_count=0
     for _ in file:
         lines_count+=1
@@ -69,7 +69,7 @@ print()
 
 from collections import deque
 n=2
-with open("sample.txt")as file:
+with open("../sample.txt")as file:
     lines=deque(file,n)
     print(list(lines))
 

@@ -56,7 +56,7 @@ print(type(pck_obj))
 
 
 data = "hello"
-with open("demo.pkl", "wb") as file:
+with open("../demo.pkl", "wb") as file:
     pickle.dump(data, file)
 
 #################################   de-serialize - load, loads
@@ -65,7 +65,7 @@ print(python_obj)
 print(type(python_obj))
 
 
-with open("demo.pkl", "rb") as file:
+with open("../demo.pkl", "rb") as file:
     data = pickle.load(file)
     print(data)
 

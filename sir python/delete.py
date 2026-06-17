@@ -48,7 +48,7 @@ print(list(d))
 from itertools import islice
 count=0
 n=3
-with open("sample.txt") as file:
+with open("../sample.txt") as file:
     for lines in file:
         count+=1
     file.seek(0)

@@ -430,7 +430,7 @@ print(list(map(lambda b:b*b,a)))
 
 ##
 ##**47 Count number of lines in a file without loading the file to the memory**
-with open(r"sample.txt") as file:
+with open(r"../sample.txt") as file:
     count=0
     for line in file:
         count+=1
@@ -438,7 +438,7 @@ with open(r"sample.txt") as file:
     
 ##
 ##**48 Printing line and line no's**
-with open(r"sample.txt") as file:
+with open(r"../sample.txt") as file:
     for line_no,line in enumerate(file):
         print(line_no,line)
         
@@ -469,7 +469,7 @@ print(d)
 
 ##
 ##**53 Write a program to count the number of white spaces in a file.**
-with open(r"sample.txt") as file:
+with open(r"../sample.txt") as file:
     b=0
     for line in file:
         b+=line.count(" ")

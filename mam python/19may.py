@@ -59,17 +59,17 @@ print(f_obj.closed) #it will reurn false if file is open if file is close then i
 print()
 
 
-file=open("sample.txt","r")
+file=open("../sample.txt", "r")
 print(file.read())#return all the data present in side the file
 print()
 
 
-file=open("sample.txt","r")
+file=open("../sample.txt", "r")
 print(file.readline())#return first line present inside the file
 print()
 
 
-file=open("sample.txt","r")
+file=open("../sample.txt", "r")
 print(file.readlines())#return all the lines present in file and give o/p in list 
 print()
 
@@ -81,7 +81,7 @@ print()
 #WAP to print the line with line numbers.........
 
 import os
-with open("sample.txt") as file:
+with open("../sample.txt") as file:
     for line_no,line in enumerate(file, start=1):
         if line.strip():
             print(line_no,line,sep="")
@@ -89,21 +89,21 @@ print()
 
 #WAP to read the file in reverce order......
 
-with open("sample.txt") as file:
+with open("../sample.txt") as file:
     for line in reversed(list(file)):
         print(line)
 print()         
 
 #WAP to find the length of the each line in the text file...
 
-with open("sample.txt") as file:
+with open("../sample.txt") as file:
     for line in file:
         print(len(line))
 print()
 
 #WAP to extract ip address from log file .........
 
-with open("access-log.txt") as file:
+with open("../access-log.txt") as file:
     for line in file:
         if line.strip():
             l=line.split()
@@ -112,7 +112,7 @@ print()
 
 #WAP to counting no of accurence of ip address in the log file.......
 d={}
-with open("access-log.txt") as file:
+with open("../access-log.txt") as file:
     for line in file:
         if line.strip():
             l=line.split()
@@ -161,7 +161,7 @@ print()
 
 #WAP to least and most occurances of the word....
 from collections import Counter
-with open("sample.txt") as file:
+with open("../sample.txt") as file:
     l=[]
     for line in file:
         if line.strip():
