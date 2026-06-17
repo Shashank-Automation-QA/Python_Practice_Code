@@ -20,23 +20,23 @@ Dictionary →  Key‑value pairs, fastest lookup
 
 ***************************************   Methods  *****************************************************
 Tuple methods
-Method          Description
-count(x)        Returns number of occurrences of x
-index(x)        Returns first index of x
+Method          Return Type        Description
+count(x)        Integer            Returns number of occurrences of x
+index(x)        Integer            Returns first index of x
 
 List methods
-Method          Description
-append()        Add item at end
-extend()        Add multiple items
-insert()        Insert at index
-remove()        Remove by value
-pop()           Remove by index
-clear()         Remove all
-index()         Get index
-count()         Count occurrences
-sort()          Sort list               list.sort(key=None, reverse=False)
-reverse()       Reverse list
-copy()          Copy list
+Method          Return Type                 Description
+append()        None                       Add item at end
+extend()        None                       Add multiple items
+insert()        None                       Insert at index
+remove()        None                       Remove by value
+pop()           Item (element)             Remove by index
+clear()         None                       Remove all
+index()         Integer                    Get index
+count()         Integer                    Count occurrences
+sort()          None                       Sort list (key=None, reverse=False)
+reverse()       None                       Reverse list
+copy()          List                       Copy list
 
 Note: Read sort method properly for interview questions because because it take 2 arguments key and reverse
 which means the sorting could be done on the basis of argument input.
@@ -55,35 +55,59 @@ lambda x: x[1] =>   it will sort the list on the bases of second sub element on 
                     Output:  [(4,1), (1,2), (2,3)]
 
 Set methods
-Method                                  Description
-s.add(x)                                Add element
-s.update(iterable)                      Add multiple
-s.remove(x)                             Remove element   (It will give error if element not found)
-s.discard(x)                            Remove safely     (It will not give error if element not found)
-s.pop()                                 Remove random element     (Remove random element)
-s.clear()                               Remove all
-s.union(t)                              Combine sets         {1,2}  {2,3}  ==>>  {1,2,3}
-s.intersection(t)                       Common elements      {1,2}  {2,3}  ==>>  {2}
-s.difference(t)                         Difference           {1,2}  {2,3}  ==>>  {1}
-s.symmetric_difference()                Difference in Both   {1,2}  {2,3}  ==>>  {1,3}
-s.difference_update()                   Similar as difference just it will update original A set
-s.intersection_update()                 Similar as intersection just it will update original A set
-s.symmetric_difference_update()         Similar as symmetric_difference_update just it will update original A set
-s.issubset(t)                           {1,2}  {1, 2, 3, 4}   ==>>    print(A.issubset(B))  ==>> True
-s.issuperset(t)                         {1,2}  {1, 2, 3, 4}   ==>>    print(B.issuperset(A))  ==>> True
-s.isdisjoint(t)                         [{1,2}  {3,4}  if NO common elements  ==>> True]   [{1,2}  {1,2}  if common elements  ==>> False]
+Method                               Return Type          Description
+s.add(x)                             None                 Add element      (this method allows only non mutable objects to add in set)
+s.update(iterable)                   None                 Add multiple
+s.remove(x)                          None                 Remove element   (It will give error if element not found)
+s.discard(x)                         None                 Remove safely     (It will not give error if element not found)
+s.pop()                              Element              Remove random element     (Remove random element)
+s.clear()                            None                 Remove all
+s.union(t)                           Set                  Combine sets         {1,2}  {2,3}  ==>>  {1,2,3}
+s.intersection(t)                    Set                  Common elements      {1,2}  {2,3}  ==>>  {2}
+s.difference(t)                      Set                  Difference           {1,2}  {2,3}  ==>>  {1}
+s.symmetric_difference()             Set                  Difference in Both   {1,2}  {2,3}  ==>>  {1,3}
+s.difference_update()                None                 Similar as difference just it will update original A set
+s.intersection_update()              None                 Similar as intersection just it will update original A set
+s.symmetric_difference_update()      None                 Similar as symmetric_difference_update just it will update original A set
+s.issubset(t)                        Boolean              {1,2}  {1, 2, 3, 4}   ==>>    print(A.issubset(B))  ==>> True
+s.issuperset(t)                      Boolean              {1,2}  {1, 2, 3, 4}   ==>>    print(B.issuperset(A))  ==>> True
+s.isdisjoint(t)                      Boolean              [{1,2}  {3,4}  if NO common elements  ==>> True]   [{1,2}  {1,2}  if common elements  ==>> False]
 
 Dict methods
-Method                         Description
-d.get("a")                     Safe way to access value {"a":1, "b":2}    d.get("a")  ==>>   1
-d.keys()                       Returns all keys  {"a":1, "b":2}           d.keys()    ==>>   dict_keys(['a','b'])
-d.values()                     Returns all values  {"a":1, "b":2}         d.values()  ==>>   dict_values(['1','2'])
-d.items()                      Returns key-value pairs  {"a":1, "b":2}    d.items()  ==>>   dict_items([('a',1),('b',2)])
-d.update()                     Add or modify multiple values
-d.setdefault()                 Gets value OR inserts default     ==>>      Adds key if not present
-d.fromkeys()                   Create dictionary with same value
-d.pop()                        Remove key and return value
-d.popitem()                    Removes last inserted item
-d.clear()                      Removes all elements
-d.copy()                       Creates duplicate dictionary
+Method             Return Type            Description
+d.get("a")         Value / None           Safe way to access value {"a":1, "b":2}    d.get("a")  ==>>   1
+d.keys()           dict_keys              Returns all keys  {"a":1, "b":2}           d.keys()    ==>>   dict_keys(['a','b'])
+d.values()         dict_values            Returns all values  {"a":1, "b":2}         d.values()  ==>>   dict_values(['1','2'])
+d.items()          dict_items             Returns key-value pairs  {"a":1, "b":2}    d.items()  ==>>   dict_items([('a',1),('b',2)])
+d.update()         None                   Add or modify multiple values
+d.setdefault()     Value                  Gets value OR inserts default     ==>>     Adds key if not present
+d.fromkeys()       Dictionary             Create dictionary with same value
+d.pop()            Value                  Remove key and return value
+d.popitem()        Tuple (key, value)     Removes last inserted item
+d.clear()          None                   Removes all elements
+d.copy()           Dictionary             Creates duplicate dictionary
 
+##########################################   Python all 35 keyword   ######################################
+
+False, None, True, and, as, assert, async, await, break,
+class, continue, def, del, elif, else, except, finally,
+for, from, global, if, import, in, is, lambda, nonlocal,
+not, or, pass, raise, return, try, while, with, yield
+
+############################   Category-wise separated python some useful important keywords  ##############
+
+Keywords                       Category
+if, elif, else                 Conditional statements
+for, while                     Loops
+break, continue, pass          Loop control
+def                            Function definition
+class                          Class creation
+return                         Return value from function
+try, except, finally           Exception handling
+import, from                   Import modules
+True, False, None              Special values
+and, or, not                   Logical operators
+is, in                         Membership / identity
+lambda                         Anonymous function
+yield                          Generator
+async, await                   Async programming
