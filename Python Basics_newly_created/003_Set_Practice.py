@@ -77,3 +77,31 @@
 #Difference b/w difference and symmetric_difference
 #If a={"apple","yahoo","google"}    a.add({"facebook"})   then    a=?   and   a[1]=?
 #If s={1,2,3,4,5,6,7}      s.add([10,20,30])= ?    and  s.update([10,20,30])
+
+
+#Difference b/w pop, remove, discard ?
+# s.remove(x)      None                 Remove element   (It will give error if element not found)
+# s.discard(x)     None                 Remove safely     (It will not give error if element not found)
+# s.pop()          Element              Remove random element     (Remove random element)
+
+
+#Difference b/w difference and symmetric_difference
+a={1,2,3,4}
+b={3,4,5,6}
+print(a.difference(b))   #{1,2}
+
+a={1,2,3,4}
+b={3,4,5,6}
+print(a.symmetric_difference(b))   #{1,2,5,6}
+
+#If a={"apple","yahoo","google"}    a.add({"facebook"})   then    a=?   and   a[1]=?
+a={"apple","yahoo","google"}
+a.add("facebook")
+print(a)            #{"apple","yahoo","google","facebook"}
+# print(a[1])       This statement will give error because set is not ordered
+
+#If s={1,2,3,4,5,6,7}      s.add([10,20,30])= ?    and  s.update([10,20,30])
+s={1,2,3,4,5,6,7}
+# s.add([10,20,30])    # this is not possible because list is mutable and add method does not allow mutable objects to add on set
+s.update([10,20,30])   #this is possible because it will remove list and add these object as int which is not mutable
+print(s)               #{1, 2, 3, 4, 5, 6, 7, 10, 20, 30}

@@ -79,9 +79,9 @@ d.get("a")         Value / None           Safe way to access value {"a":1, "b":2
 d.keys()           dict_keys              Returns all keys  {"a":1, "b":2}           d.keys()    ==>>   dict_keys(['a','b'])
 d.values()         dict_values            Returns all values  {"a":1, "b":2}         d.values()  ==>>   dict_values(['1','2'])
 d.items()          dict_items             Returns key-value pairs  {"a":1, "b":2}    d.items()  ==>>   dict_items([('a',1),('b',2)])
-d.update()         None                   Add or modify multiple values
-d.setdefault()     Value                  Gets value OR inserts default     ==>>     Adds key if not present
-d.fromkeys()       Dictionary             Create dictionary with same value
+d.update()         None                   Add or modify multiple values     ==>>    d.update({'a':1}) we need to pass the values as dict
+d.setdefault()     Value                  Gets value OR inserts default     ==>>    d.setdefault('a',1)  Adds key if not present
+d.fromkeys()       Dictionary             Create dictionary with same value ==>>    d.fromkeys(['a','b','c'],0)
 d.pop()            Value                  Remove key and return value
 d.popitem()        Tuple (key, value)     Removes last inserted item
 d.clear()          None                   Removes all elements

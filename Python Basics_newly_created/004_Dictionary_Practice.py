@@ -50,5 +50,42 @@ d = {'a': 1, 'b': 2, 'c': 3}
 #If points={'a':1,'b':2,'c':3} then increment the value of b
 #Difference b/w pop() and popitem()
 #If l=['a','b','c','d'] create a dictionary with "No Value" as value for all keys.
-#If D1={'a':1,'b':2,'c':3} and D2={'a':1,'b':2,'c':3} then D3={**D1,**D2} or D3=D1/D2 what is the o/p D3=?
+#If D1={'a':1,'b':2,'c':3} and D2={'c':1,'d':2,'e':3} then D3={**D1,**D2} or D3=D1/D2 what is the o/p D3=?
 #If points={'a':1,'b':2,'c':3} then add one more key 'd' with value 4
+
+#If points={'a':1,'b':2,'c':3} then increment the value of b
+points={'a':1,'b':2,'c':3}
+points.update({'b':points.get('b') + 1})
+print(points)
+# Second Logic without inbuilt function
+points['b']= points['b']+1
+print(points)
+
+#Difference b/w pop() and popitem()
+points={'a':1,'b':2,'c':3}
+print(points.pop('a'))        #pop method is removing specified "a" value from dict and also returning value 1
+print(points.popitem())       #popitem method is removing last value from dict and also returning key and value in
+                              # form of tuple ('c',3)
+
+#If D1={'a':1,'b':2,'c':3} and D2={'c':1,'d':2,'e':3} then D3={**D1,**D2} or D3=D1|D2 what is the o/p D3=?
+D1={'a':1,'b':2,'c':3}
+D2={'d':1,'e':2,'f':3}
+print({**D1,**D2})
+print(D1|D2)
+
+#If points={'a':1,'b':2,'c':3} then add one more key 'd' with value 4
+# without inbuilt method
+points = {'a':1,'b':2,'c':3}
+points['d']=4
+print(points)
+
+# with inbuilt method
+points.update({'e':4})
+print(points)
+
+# with inbuilt method if key will not be present then only it will add the new key
+points.setdefault('f',5)
+print(points)
+
+
+
