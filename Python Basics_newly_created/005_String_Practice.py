@@ -1,5 +1,6 @@
 #There are multiple concepts are here which is possible to understand with the help of string datatype
 #****************************************** slicing ***************************************************
+   # 012345678910
 s = "hello world"
 print(s[0:len(s):1])   #==>  'hello world'
 print(s[::])           #==>  'hello world'
@@ -114,39 +115,27 @@ print(sentence.rsplit(" ", 2))    #==>   ['python is a', 'programming', 'languag
 print(sentence.split())                        #==>   ['python', 'is', 'a', 'programming', 'language']
 print(sentence.rsplit())                       #==>   ['python', 'is', 'a', 'programming', 'language']
 
+sentence = 'python,is,a,programming,language'
+print(s.split(","))             #==>  ['python', 'is', 'a', 'programming', 'language']
 
 #*************************** join() ******************************
 s = "hello"
-"-".join(s)
-'h-e-l-l-o'
-"%".join(s)
-'h%e%l%l%o'
-"ABC".join(s)
-'hABCeABClABClABCo'
+print("-".join(s))              #==>  'h-e-l-l-o'
+print("%".join(s))              #==>  'h%e%l%l%o'
+print("ABC".join(s))            #==>  'hABCeABClABClABCo'
 
-l = sentence.split()
-l
-['python', 'is', 'a', 'programming', 'language']
-" ".join(l)
-'python is a programming language'
-s
-'hello'
-sentence
-'python is a programming language'
-s = 'python,is,a,programming,language'
-s.split(",")
-['python', 'is', 'a', 'programming', 'language']
+sentence1 = "python is a programming language"
+l = sentence1.split()
+print(l)                        #==>  ['python', 'is', 'a', 'programming', 'language']
+print(" ".join(l))              #==>  'python is a programming language'
 
 #**************************** strip() *******************************
 s = "      hello     "
-s.strip()
-'hello'
+print(s.strip())                #==>  'hello'
 
 s = "****#hai*****"
-s.strip("*#")
-'hai'
-s.strip("#")
-'****#hai*****'
+print(s.strip("*#"))            #==>   'hai'
+print(s.strip("#"))             #==>   '****#hai*****'
 
 #Please learn format strings concept once learning the functions
 #************************************************** format strings ********************************************************
