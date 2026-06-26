@@ -23,3 +23,15 @@
 # Flatten a nested dictionary
 
 # Create nested dictionary from list
+
+# Check if the given number is leap year or not
+
+#WAP to print prime number in between range of 1 to 10 using while loop
+
+#WAP to conver upper case to lower and lower case to upper using logic without swapcase() keyword
+
+#WAP to print prime number in between range of 1 to 10
+
+#WAP to print fibonacci series from 0 t0 10.
+
+#WAP to print the asci value of each character

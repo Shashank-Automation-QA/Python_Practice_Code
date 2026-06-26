@@ -54,8 +54,17 @@ print(b.upper())  #==>   'HELLO WORLD'
 print(b.lower())  #==>   'hello world'
 
 s = "Hello World"
-
 print(s.swapcase())  #==>  'hELLO wORLD'
+
+#WAP to check whether a character is vowel or not and swap its case in the sentence
+s="hAi goOd morning"        # o/p should be ==>  "haI gOod mOrning"
+s1=""
+for i in s:
+    if i in "AEIOUaeiou":
+        s1=s1+i.swapcase()
+    else:
+        s1 = s1 + i
+print(s1)
 
 #******************* count() ********************
 s = 'Hello World'
