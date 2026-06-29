@@ -16,3 +16,27 @@ l=s.split()
 for i in l:
     for k in i:
         print(k, ord(k), end=" ")
+print(end='\n')
+
+#WAP to count number of digits and alphabet in the string.
+#First Method
+s="091Singhshashank091"
+alphabet=0
+number=0
+for i in s:
+    if ord('a')<=ord(i)<=ord('z') or ord('A')<=ord(i)<=ord('A'):
+        alphabet+=1
+    else:
+        number+=1
+print(alphabet, number)
+
+#Second Method
+s="091Singhshashank091"
+alphabet=0
+number=0
+for i in s:
+    if i.isalpha():
+        alphabet+=1
+    elif i.isdigit():
+        number+=1
+print(alphabet, number)

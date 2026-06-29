@@ -106,7 +106,7 @@ print(s.endswith("ld"))       #==>  True
 
 #************************   isalnum() **********************************
 #WAP to check if the given character is a special character
-a=input("Input character:")
+a="$"
 if not a.isalnum():
     print(f"{a} is a special character")
 

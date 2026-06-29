@@ -105,3 +105,127 @@ for i in s:
     print(i)
 
 
+#############################  Activity ###############################
+
+#WAP to count the no. of words in sentence
+s="hello how are you"
+count=0
+for i in s.split():
+    count+=1
+print(count)
+
+#WAP to print all the repeated characters
+s="hello how are you"
+for i in s:
+    if s.count(i)>1:
+        print(i)
+
+#WAP to remove the duplicate and repeated character in the string
+s="hello how are you"
+s1=""
+for i in s:
+    if s.count(i)==1:
+        s1+=i
+print(s1)
+
+#WAP to print the duplicate character without using inbuilt function
+s1="hello world"
+duplicate=""
+non_duplicate=""
+for i in s1:
+    if i not in non_duplicate:
+        non_duplicate+=i
+    else:
+        duplicate+= i
+print(("".join(set(duplicate)), non_duplicate))
+
+#WAP to print all the indices of the given sub string
+s="hello world"
+ch='o'
+for i in range(len(s)):
+    if s[i]==ch:
+        print(s[i], i)
+
+#WAP to print first indices of the given sub string
+s="hello world"
+ch='o'
+for i in range(len(s)):
+    if s[i]==ch:
+        print(s[i], i)
+        break
+
+#WAP to print second indices of the given sub string
+s="hello world"
+ch='o'
+count=0
+for i in range(len(s)):
+    if s[i]==ch:
+        count+=1
+        if count==2:
+            print(s[i], i)
+            break
+
+#WAP to create list with word ending with vowels
+s="Hi good afternoon, welcome to afternoon session"
+l=s.split()
+l1=[]
+for i in l:
+    if i[-1] in "AEIOUaeiou":
+        l1.append(i)
+print(l1)
+
+#WAP to create set with word ending with vowels
+s="Hi good afternoon, welcome to afternoon session"
+l=s.split()
+l1=set()
+for i in l:
+    if i[-1] in "AEIOUaeiou":
+        l1.add(i)
+print(l1)
+
+#WAP to create a list of tuple with word and its length pair
+s="Hi good afternoon, welcome to afternoon session"
+l=s.split()
+l1=[]
+for i in l:
+    l1.append((i,len(i)))
+print(l1)
+
+#WAP to create a dict with word and its length pair if word starts with vowel
+s="Hi good afternoon, welcome to afternoon session"
+l=s.split()
+d={}
+for i in l:
+    if i[0] in "AEIOUaeiou":
+        d[i]=len(i)
+print(d)
+
+#WAP to create a dict with letter and word starting with that letter pair
+s="Hi good afternoon, welcome to the afternoon session"
+d={}
+for i in s.split():
+    if i[0] not in d:
+        d[i[0]]=[i]
+    else:
+        d[i[0]].append(i)
+print(d)
+
+#WAP to create a dict of character and indices pair
+s="Hi good afternoon, welcome to the afternoon session"
+d={}
+for i in range(len(s)):
+    if s[i] not in d:
+        d[s[i]]=[i]
+    else:
+        d[s[i]].append(i)
+print(d)
+
+#WAP to create a dict of character and its asci value pair
+s="Hi good afternoon, welcome to the afternoon session"
+d={}
+for i in s:
+    if ord(i) not in d:
+        d[ord(i)]=[i]
+    else:
+        d[ord(i)].append(i)
+print(d)
