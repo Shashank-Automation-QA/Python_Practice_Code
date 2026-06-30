@@ -157,8 +157,8 @@ s = "****#hai*****"
 print(s.strip("*#"))            #==>   'hai'
 print(s.strip("#"))             #==>   '****#hai*****'
 
-#************************************************** format strings ********************************************************
-#############################  {} method  #########################
+#************************************************** format strings **********************************************
+#############################  {} method  #############################
 a= input("enter the name:")
 print(f"My name is {a}")
 
@@ -166,6 +166,29 @@ print(f"My name is {a}")
 a= input("enter the name:")
 print("My name is {}".format(a))
 
-###########################  "   %s" % method  #########################
+###########################  "   %s" % method  ########################
 a= input("enter the name:")
 print("My name is %s" % a)
+
+#*********************************  Reversing string with 4 different methods  **********************************
+#********* Slicing Method *********
+s="Shashank"
+print(s[::-1])
+
+#********* Range Method ***********
+s="Shashank"
+for i in range(-1,-len(s)-1,-1):
+    print(s[i], end="")
+print(end='\n')
+
+#********* Concatenation ***********
+s="Shashank"
+res=""
+for i in s:
+    res=i+res
+print(res)
+
+#*********   Reversed()  ***********
+s="Shashank"
+for i in reversed(s):
+    print(i, end='')

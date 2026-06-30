@@ -70,6 +70,49 @@ for i in range(1,50,1):
         print(i, end=' ')
 print(end="\n")
 
+########################  enumerate()  ###################
+
+#WAP to print the values inside list along with their indexes
+l=[1,2,3,4,5,6,7,8]
+for index, value in enumerate(l):
+    print(index, value)
+
+#WAP to print the values inside list along with their indexes list in tuple form
+l=[1,2,3,4,5,6,7,8]
+for i in enumerate(l):
+    print(i)
+
+########################  zip()  ###########################
+
+####### Syntax: ==>  zip(iterable1, iterable2...etc)
+##Basically zip() takes more then one iterable and convert them in form of list of tuple [( ), ( ), ( )]
+
+#WAP to create list of tuple by combining both list values in order
+l1=['apple', 'google', 'flipkart']
+l2=[10,20,30]
+for i in zip(l1,l2):
+    print(i)
+
+# #WAP to create a dict by making one list as key and elements of other list as value
+l1=['apple', 'google', 'flipkart']
+d={}
+for j,k in zip(l1,l2):
+    d[j]=k
+print(d)
+
+########################  zip_longest()  ###########################
+
+####### Syntax: ==>  zip(iterable1, iterable2...,fillvalue=None)
+## if both iterables lengths are not same in that case we can use zip_longest it will use none as  pair
+## of other value. We need to import zip_longest from itertools class before using it
+
+#WAP to create list of tuple by combining both list values in order
+from itertools import zip_longest
+l1=['apple', 'google', 'flipkart','walmart']
+l2=[10,20,30]
+for i in zip_longest(l1,l2):
+    print(i)
+
 ########################  for else loop ###################
 ########################     break      ###################
 
@@ -103,7 +146,6 @@ for key in d:
 s={1,2,3,4,5}
 for i in s:
     print(i)
-
 
 #############################  Activity ###############################
 
@@ -229,3 +271,52 @@ for i in s:
     else:
         d[ord(i)].append(i)
 print(d)
+
+#WAP to create a dictionary with value if integer datatype
+d={'a':1, 'b':'hello', 'c':85, 'd':12.3, 'e':[1,2,3]}
+d1={}
+for i in d:
+    if isinstance(d[i],int):
+        d1.update({i:d[i]})
+print(d1)
+
+#WAP to create a dictionary if the value is string, reverse it, else keep it as it.
+d={'a':1, 'b':'hello', 'c':85, 'd':12.3, 'e':[1,2,3]}
+d1={}
+for i in d:
+    if isinstance(d[i],str):
+        d1.update({i:d[i][::-1]})
+    else:
+        d1.update({i: d[i]})
+print(d1)
+
+#WAP to print index and element of an iterable
+iterable=['apple', 'google','wallmart','flipkart','gmail']
+for i in enumerate(iterable):
+    print(i, end=' ')
+
+#WAP to print even index element of an iterable
+###################  First Method
+iterable=['apple', 'google','wallmart','flipkart','gmail']
+for i in enumerate(iterable):
+    if i[0]%2==0:
+        print(i[1], end=' ')
+print(end='\n')
+
+###################  Second Method
+iterable=['apple', 'google','wallmart','flipkart','gmail']
+for i,v in enumerate(iterable):
+    if i%2==0:
+        print(v, end=' ')
+
+#WAP to create a dict of indexes element pair only if the element of and odd length
+iterable=['apple', 'google','wallmart','flipkart','gmail']
+d={}
+for i,v in enumerate(iterable):
+    if len(v)%2!=0:
+        d[i]=v
+print(d)
+
+
+
+
