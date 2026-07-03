@@ -93,3 +93,38 @@ def add(a,b,c=0):
 add(1,2)
 add(1,2,3)
 # print(add())              This will give the syntax error because a and b is not having there default values
+
+#*******************************************  Function Annotations   ***********************************************
+# Function annotations are just for hint and it dose not enforce type check.
+
+def function_annotation(a:int, b:int, c:int):
+    print(a+b+c)
+
+function_annotation(1,2,3)
+function_annotation("Mr.", "shahsank"," singh")  # We have mentionn there int but we can give string values as well there is no inforcement
+
+#*******************************************  Variable Initialization   ***********************************************
+#Local variable ==>> Variable which we initialize in side function and can be use only inside
+#Global variable ==>> Variable which we initialize out side function and can be use out side and inside both places
+
+def local_example():       #==>> this is local variable example so here we can use only inside the function
+    a=0
+
+a=10
+def global_example():      #==>> this is global variable example here we can use only inside the function we can not modify the value for modifying value always we need to use global keyword
+    global a
+    a+=1
+    print(a)
+
+print(global_example)
+
+##########  Global Scope Variable
+a=1
+b=2
+def add():
+    global a
+    a=a+b
+    return a
+print(a)
+print(add())
+print(a)
