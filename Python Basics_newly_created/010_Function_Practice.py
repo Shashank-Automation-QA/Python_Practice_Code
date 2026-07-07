@@ -128,3 +128,91 @@ def add():
 print(a)
 print(add())
 print(a)
+
+##########  Local Scope Variable
+def spam():
+    a=2
+    def wrapper():
+        nonlocal a
+        a=a+10
+        print(a)
+    wrapper()
+
+spam()
+
+###############  Activity ###################
+#WAF to return dictionary with character and it ascii value.
+def char_ascii(string):
+    d={i:ord(i) for i in string}
+    return d
+print(char_ascii("hello"))
+
+#WAF to return the length of any iterable without using inbuilt function
+def find_length(iterable):
+    count=0
+    for i in iterable:
+        count+=1
+    return count
+print(find_length("shashank"))
+
+#WAP to search for character in a given string and return the corresponding index
+#With using inbuilt method
+def find_index(string,character):
+    for i in string:
+        _index= string.index(character)
+    return _index
+print(find_index("shashank", 'k'))
+
+#Without using inbuild method
+def find_index_without_inbuild(string,character):
+    count=0
+    for i in string:
+        count+=1
+        if character==i:
+            return count-1
+print(find_index_without_inbuild("shashank", 'k'))
+
+#WAF to print the number of positional and keyword arguments
+def number_positional_keyword(*args,**kwargs):
+    print(len(args), "length of positional arguments")
+    print(len(kwargs), "length of keyword arguments")
+number_positional_keyword(1,2,3,4,a=1,b=2,c=3)
+
+# *******************************************  Recursion ************************************************************
+# To find out the recursion limit syntax
+#Syntax:--    from sys import getrecursionlimit
+#             getrecursionlimit()       ==>>  1000
+
+# To set the recursion limit syntax
+#Syntax:--    from sys import setrecursionlimit
+#             getrecursionlimit(2000)
+#             getrecursionlimit()       ==>>  2000
+
+#WAF to print hellow 3 times using recursion
+def hello(count=0):
+    if count==3:
+        return
+    print("hello")
+    count=count+1
+    hello(count)
+hello( )
+
+#WAF to print number from 1 to 10 using recursion
+def number(count=1):
+    if count==11:
+        return
+    print(count)
+    count=count+1
+    number(count)
+number( )
+
+#WAF to print the factorial using recursion
+def factorial(n,fact=1,i=1):
+    if i>n:
+        return fact
+    fact=fact*i
+    i+=1
+    return factorial(n,fact,i)
+print(factorial(5))
+
+
