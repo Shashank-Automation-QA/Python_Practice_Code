@@ -37,6 +37,15 @@ print(square_cube(5))
 palindrome= lambda statement: "palindrome" if statement==statement[::-1] else "not palindrome"
 print(palindrome("dad"))
 
+# WAF to add the elements of two lists.
+l1=[1,2,3,4]
+l2=[9,5,4,6]
+list_addition = lambda num1,num2: num1+num2
+print(list(map(list_addition,l1,l2)))
+#               OR
+list_addition1 = lambda num:num[0]+num[1]
+print(list(map(list_addition1,zip(l1,l2))))
+
 #*****************************************    Map()  ****************************************************
 
 #Syntax:   map(function_to_apply, list_of_inputs)

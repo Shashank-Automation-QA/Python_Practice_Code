@@ -45,3 +45,5 @@
 #WAP to print nth fibonaci series till number 10
 
 #WAP to check all the open brackets are closed or not string="{[()]}"
+
+#WAP to check if the given number is present in fibonacci series.
