@@ -73,10 +73,16 @@ print(list(map(str.swapcase,l)))
 
 # to convert the negative numbers into positive in the list
 numbers = [-9, 2, 5, -4, 8, -2, 7, -12]
-
+positive= lambda num: abs(num)
+print(list(map(positive,numbers)))
+#           OR
+print(list(map(abs,numbers)))
 
 # to return the pair of word and its length in the sentence
 sentence = "This IS a BunCh of WORDS"
+l=sentence.split()
+word_length= lambda l:(l,len(l))
+print(list(map(word_length,l)))
 
 #*****************************************    Filter()  ****************************************************
 
@@ -92,13 +98,20 @@ print(list(filter(even_, numbers)))   # ==>>  [2, 4, 6, 8]
 
 # extract the names which have length > 4
 names = ["greg", "steve", "bob", "alexa"]
-
+grater_len=lambda word: len(word)>4
+print(list(filter(grater_len,names)))
 
 # Build a list with only even length strings using filter class
 names = ['apple', 'google', 'yahoo', 'facebook', 'yelp', 'flipkart', 'gmail', 'instagram']
+even_len= lambda word: len(word)%2==0
+print(list(filter(even_len,names)))
 
 # Return the string if the string is starting with a vowel character"
 names = ['laura', 'steve', 'bill', 'james', 'bob', 'greig', 'scott', 'alex', 'ive']
+vowel_starting=lambda word: word[0] in "AEIOUaeiou"
+print(list(filter(vowel_starting,names)))
 
 # Program to return only positive values in the list using filter class
 numbers = [-2, -1, 0, 1, 2]
+positive_value=lambda value: value>=0
+print(list(filter(positive_value,numbers)))
