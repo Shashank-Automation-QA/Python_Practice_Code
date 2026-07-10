@@ -124,3 +124,76 @@ print(list(filter(vowel_starting,names)))
 numbers = [-2, -1, 0, 1, 2]
 positive_value=lambda value: value>=0
 print(list(filter(positive_value,numbers)))
+
+#*****************************************    Sorted()  ****************************************************
+
+#Syntax:        sorted(iterable,*,key=none,reverse=false)
+
+#WAP to sort a string value and create new list and also reverse the string value
+s="python"
+r=sorted(s)
+r=sorted(s,reverse=True)
+print(r)
+
+#WAP to sort a list value and create new list and also reverse the string value
+name=["google", "amazon", "gmail", "walmart", "flipkart", "microsoft", "apple"]
+s_names= sorted(name)
+print(s_names)
+s_names= sorted(name, reverse=True)
+print(s_names)
+s_names= sorted(name, reverse=True, key=len)
+print(s_names)
+
+#*****************************************    Custom Sorted()  ************************************************
+#WAP to sort a list on the base of first character of each elements given in list.
+name=["google", "apple", "amazon", "gmail"]
+#############Default sorting
+s_name= sorted(name)
+print(s_name)   # ==>> ['amazon', 'apple', 'gmail', 'google']
+
+#############Normal function for key
+def first_char(string):
+    return string[0]
+s_name=sorted(name,key=first_char)
+print(s_name)   # ==>> ['apple', 'amazon', 'google', 'gmail']
+
+#############Lambda expression for key
+first_char = lambda character:character[0]
+s_name=sorted(name,key=first_char)
+print(s_name)   # ==>> ['apple', 'amazon', 'google', 'gmail']
+
+#WAP to sort a list on the base of last character of each elements given in list using lambda function
+name=["google", "apple", "amazon", "gmail"]
+last_character= lambda character:character[-1]
+s_name=sorted(name, key=last_character)
+print(s_name)
+
+#WAP to sort the list based on the 1st element of each tuple.
+l=[("google",2), ("apple",5),("amazon",6),("gmail",4)]
+first_element = lambda ele:ele[0][0]
+s_list= sorted(l,key=first_element)
+print(s_list)
+
+#WAP to sort the dictionary based on the keys
+d={"acme":45.23, "apple":612.5, "ibm":78, "hpq":89.25}
+sorted_keys = sorted(d)
+print(sorted_keys)      # ==>>  ['acme', 'apple', 'hpq', 'ibm']
+
+sorted_keys = sorted(d.items())
+print(sorted_keys)      # ==>>  [('acme', 45.23), ('apple', 612.5), ('hpq', 89.25), ('ibm', 78)]
+
+dict_key_sort = lambda value:value[1]
+sorted_keys = sorted(d.items(),key=dict_key_sort)
+print(sorted_keys)      # ==>>  [('acme', 45.23), ('ibm', 78), ('hpq', 89.25), ('apple', 612.5)]
+
+#WAP to group anagram
+words = ['eat', 'silent', 'ate', 'hello',  'listen', 'tea']
+d = {}
+for word in words:
+    key="".join(sorted(word))
+    if key not in d:
+        d[key]=[word]
+    else:
+        d[key].append(word)
+print(d)
+
