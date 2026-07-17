@@ -108,12 +108,31 @@ with open(r"sample.txt","r") as file:
         print(line_no,line)
 
 #WAP to print only non blank line
+with open(r"sample.txt","r") as file:
+    for line in file:
+        if line.strip():
+            print(line)
 
 #WAP to read file in reverse order
+with open(r"sample.txt","r") as file:
+    for line in reversed(list(file)):
+        print(line)
 
-#WAP to count no. of files in sample.txt file
+#WAP to count no. of lines in sample.txt file
+with open(r"sample.txt","r") as file:
+    count=0
+    for _ in file:
+        count+=1
+print(count)
 
 #WAP to count no. of words present in sample.txt file
+with open(r"sample.txt","r") as file:
+    words_count = 0
+    for line in file:
+        l=line.split()
+        for word in l:
+            words_count+=1
+print(words_count)
 
 #WAP to print length of each line with the line in file sample.txt
 
@@ -127,7 +146,7 @@ with open(r"sample.txt","r") as file:
 
 #WAP to print nth line from file.
 
-#WAP to print read firt n lines from file.
+#WAP to print read first n lines from file.
 
 
 

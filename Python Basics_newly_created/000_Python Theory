@@ -127,3 +127,6 @@ To use pi
 ==>>  import math
       p=math.pi
 
+########################################## in side if condition #################################################
+In side if condition all below given conditions are considered as false
+==>>  False, None, 0, 0.0, '', [], {}, set()
