@@ -135,18 +135,74 @@ with open(r"sample.txt","r") as file:
 print(words_count)
 
 #WAP to print length of each line with the line in file sample.txt
+with open(r"sample.txt","r") as file:
+    for line in file:
+        if line.strip():
+            print(line,len(line))
 
 #WAP to create a dictionary with word and its count pair in the file.
+with open(r"sample.txt","r") as file:
+    d={}
+    for line in file:
+        if line.strip():
+            l=line.split()
+            for i in l:
+                if i not in d:
+                    d[i]=1
+                else:
+                    d[i]+=1
+print(d)
 
 #WAP to extract the IP address from file
+with open(r"access-log.txt","r") as file:
+    for line in file:
+        if line.strip():
+            l=line.split("-")
+            print(l[0])
 
 #WAP to create dictionary with IP address and their count pair.
+with open(r"access-log.txt","r") as file:
+    d={}
+    for line in file:
+        l=line.split("-")
+        if l[0] not in d:
+            d[l[0]]=1
+        else:
+            d[l[0]]+=1
+print(d)
 
 #WAP to print most accured IP address in the "access logged" file.
+with open(r"access-log.txt","r") as file:
+    d={}
+    for line in file:
+        if line.strip():
+            l=line.split("-")
+            if l[0] not in d:
+                d[l[0]]=1
+            else:
+                d[l[0]]+=1
+min_,*rest,max_=sorted(d.items(), key=lambda item:item[-1])
+print(max_)
 
 #WAP to print nth line from file.
+with open(r"sample.txt","r") as file:
+    count=0
+    for line in file:
+        count+=1
+        if count==9:
+            print(line)
+
+                    # OR
+
+with open(r"sample.txt","r") as file:
+    n=input("enter line number: ")
+    for index,line in enumerate(file, start=1):
+        if index==int(n):
+            print(line)
 
 #WAP to print read first n lines from file.
-
-
-
+with open(r"sample.txt","r") as file:
+    n=input("Enter line number: ")
+    for index,line in enumerate(file,start=1):
+        if index<=int(n):
+            print(line)
