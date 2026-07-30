@@ -26,14 +26,18 @@ index(x)        Integer            Returns first index of x
 
 List methods
 Method          Return Type                 Description
+
 append()        None                       Add item at end
 extend()        None                       Add multiple items
 insert()        None                       Insert at index
+
 remove()        None                       Remove by value
 pop()           Item (element)             Remove by index
 clear()         None                       Remove all
+
 index()         Integer                    Get index
 count()         Integer                    Count occurrences
+
 sort()          None                       Sort list (key=None, reverse=False)
 reverse()       None                       Reverse list
 copy()          List                       Copy list
@@ -58,10 +62,12 @@ Set methods
 Method                               Return Type          Description
 s.add(x)                             None                 Add element      (this method allows only non mutable objects to add in set)
 s.update(iterable)                   None                 Add multiple
+
 s.remove(x)                          None                 Remove element   (It will give error if element not found)
 s.discard(x)                         None                 Remove safely     (It will not give error if element not found)
 s.pop()                              Element              Remove random element     (Remove random element)
 s.clear()                            None                 Remove all
+
 s.union(t)                           Set                  Combine sets         {1,2}  {2,3}  ==>>  {1,2,3}
 s.intersection(t)                    Set                  Common elements      {1,2}  {2,3}  ==>>  {2}
 s.difference(t)                      Set                  Difference           {1,2}  {2,3}  ==>>  {1}
@@ -69,6 +75,7 @@ s.symmetric_difference()             Set                  Difference in Both   {
 s.difference_update()                None                 Similar as difference just it will update original A set
 s.intersection_update()              None                 Similar as intersection just it will update original A set
 s.symmetric_difference_update()      None                 Similar as symmetric_difference_update just it will update original A set
+
 s.issubset(t)                        Boolean              {1,2}  {1, 2, 3, 4}   ==>>    print(A.issubset(B))  ==>> True
 s.issuperset(t)                      Boolean              {1,2}  {1, 2, 3, 4}   ==>>    print(B.issuperset(A))  ==>> True
 s.isdisjoint(t)                      Boolean              [{1,2}  {3,4}  if NO common elements  ==>> True]   [{1,2}  {1,2}  if common elements  ==>> False]
