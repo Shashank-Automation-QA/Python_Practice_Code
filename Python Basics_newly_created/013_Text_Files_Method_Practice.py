@@ -206,3 +206,31 @@ with open(r"sample.txt","r") as file:
     for index,line in enumerate(file,start=1):
         if index<=int(n):
             print(line)
+
+#************************************** Write action on files *******************************************
+
+#For writing content inside file we have write() and writelines() methods are present and we must have to choose the correct mode for writing data
+
+# tell() return the correct position of cursor
+# seek(position) change the position of cursor it takes one argument as index
+
+import os
+os.chdir(r"C:\Users\shashank.singh\PycharmProjects\Python_Practice_Code\Python Basics_newly_created\files")
+print(os.getcwd())  #To check current working directory location
+with open(r"demo.txt","w") as file:
+    print(file.write("Hi My Name is Shashank and i am learning python\n"))   #>>  file.write() returns no of characters entered in file, and it takes only string values
+    print(file.tell())  # tell() return the cursor location
+
+    file.writelines("Hi \nhello \nhow are you\n") #>>  file.writelines() returns none and write iterables like dict, list, tuple in file
+
+    #below adding dict data in to file
+    data={"name":"shashank\n", "city":"Banglore\n"}
+
+    file.writelines(data)           #>>>>>  If we will write only data then it will add only dict keys on file
+
+    file.writelines(data.values())  #>>>>>  If we will write data.values() then it will add only values on file
+
+    #If we want both key and value the we have to write code like below line
+    file.writelines(f"{k}:{v}" for k,v in data.items())
+    file.close()
+
