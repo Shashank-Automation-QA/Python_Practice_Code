@@ -1,0 +1,8 @@
+Hi My Name is Shashank and i am learning python
+Hi 
+hello 
+how are you
+namecityshashank
+Banglore
+name:shashank
+city:Banglore
