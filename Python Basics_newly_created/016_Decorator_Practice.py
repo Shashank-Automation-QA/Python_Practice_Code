@@ -152,6 +152,34 @@ def arg_function(a,b,c,d,e,f,g,name="none",age="none" ):
 arg_function(1,2,3,4,5,6,7, name="shashank",age="32" )
 
 #WAD that return only positive values while doing substraction
+def only_positive_value(funct):
+    def positive_value(*args,**kwargs):
+        res=funct(*args,**kwargs)
+        return abs(res)
+    return positive_value
+
+@only_positive_value
+def sub_(a,b):
+    return a-b
+
+print(sub_(5,10))
 
 #WAD that counts the number of calls of main function
+count=0
+def call_counter(funct):
+    def counter_(*args,**kwargs):
+        global count
+        count+=1
+        res=funct()
+        return res
+    return counter_
+
+@call_counter
+def spam_():
+    return "spam"
+
+print(spam_())
+print(spam_())
+print(spam_())
+print(count)
 
