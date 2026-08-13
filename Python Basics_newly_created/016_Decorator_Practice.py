@@ -1,11 +1,12 @@
 #*********************************    First-Class Object   ****************************************************
-#
-# In Python, a first-class object is an object that can be treated like any other value. This means it can:
-#  ✅ Be assigned to a variable
-#  ✅ Be passed as an argument to another function
-#  ✅ Be returned from a function
-#  ✅ Be stored in data structures like lists, tuples, and dictionaries
-#  ✅ Be created at runtime
+"""
+In Python, a first-class object is an object that can be treated like any other value. This means it can:
+ ✅ Be assigned to a variable
+ ✅ Be passed as an argument to another function
+ ✅ Be returned from a function
+ ✅ Be stored in data structures like lists, tuples, and dictionaries
+ ✅ Be created at runtime
+"""""
 
 #Assign a Function to a Variable Example
 def greet():
@@ -31,48 +32,49 @@ f=outer()
 print(f())
 
 #******************************************  Decorator  ******************************************************
+"""
+Decorator is used to add some extra functionality on function without changing function itself
 
-#Decorator is used to add some extra functionality on function without changing function itself
+Syntax >>
+             def decorator(func):                #Step 2 we created decorator for step 1 function
+                  def wrapper():                    # This is inner function which is adding extra functionality to our main step 1 function
+                     print("Before Function")       # This is extra functionality
+                     res = func()                   # This is our main function called inside the inner function
+                     print("After function")        # This is extra functionality
+                     return res
+                  return wrapper                    # Returning the response with extra functionality (main function + Inner function)
 
-#Syntax >>
-             # def decorator(func):                #Step 2 we created decorator for step 1 function
-             #      def wrapper():                    # This is inner function which is adding extra functionality to our main step 1 function
-             #         print("Before Function")       # This is extra functionality
-             #         res = func()                   # This is our main function called inside the inner function
-             #         print("After function")        # This is extra functionality
-             #         return res
-             #      return wrapper                    # Returning the response with extra functionality (main function + Inner function)
-             #
-             #
-             # @decorator
-             # def main_func():              #Sep 1 we created simple function
-             #     return "main function"
-             #
-             #
-             # print(main_func())            #Step 3 Calling decorator through the name main_func
 
-# Note: Whenever we call (main function) it will give result with (decorator + main function) but if we want the
-#         output of (main function) as well as (decorated main function) in that case we can follow below syntax
+             @decorator
+             def main_func():              #Sep 1 we created simple function
+                 return "main function"
 
-#Syntax >>
-             # def decorator(func):                #Step 2 we created decorator for step 1 function
-             #      def wrapper():                    # This is inner function which is adding extra functionality to our main step 1 function
-             #         print("Before Function")       # This is extra functionality
-             #         res = func()                   # This is our main function called inside the inner function
-             #         print("After function")        # This is extra functionality
-             #         return res
-             #      return wrapper                    # Returning the response with extra functionality (main function + Inner function)
-             #
-             #
-             # def main_func():           #Sep 1 we created simple function
-             #     return "main function"
-             #
-             # original_main_func = main_func                               #Step 3 we have to store our main function inside some variable
-             # decorated_main_function = decorator(main_func)      #Step 4 we have to store our decorated main function inside the variable
-             #
-             # print(original_main_func())                    #Step 5 calling main function without extra code
-             # print(decorated_main_function())               #Step 6 calling decorator function with extra code
 
+             print(main_func())            #Step 3 Calling decorator through the name main_func
+
+Note: Whenever we call (main function) it will give result with (decorator + main function) but if we want the
+        output of (main function) as well as (decorated main function) in that case we can follow below syntax
+
+Syntax >>
+             def decorator(func):                #Step 2 we created decorator for step 1 function
+                  def wrapper():                    # This is inner function which is adding extra functionality to our main step 1 function
+                     print("Before Function")       # This is extra functionality
+                     res = func()                   # This is our main function called inside the inner function
+                     print("After function")        # This is extra functionality
+                     return res
+                  return wrapper                    # Returning the response with extra functionality (main function + Inner function)
+
+
+             def main_func():           #Sep 1 we created simple function
+                 return "main function"
+
+             original_main_func = main_func                               #Step 3 we have to store our main function inside some variable
+             decorated_main_function = decorator(main_func)      #Step 4 we have to store our decorated main function inside the variable
+
+             print(original_main_func())                    #Step 5 calling main function without extra code
+             print(decorated_main_function())               #Step 6 calling decorator function with extra code
+
+"""""
 #*************************************    Activity  ***********************************************************
 
 #WAP to log message before any function execution using decorator
@@ -183,3 +185,54 @@ print(spam_())
 print(spam_())
 print(count)
 
+#************************************** Parametrize decorator **********************************************
+"""
+Parameterize decorator is similar to normal decorator the only addition is here instead of creating 2
+    functions we crete here 3 functions and the most outer function takes argument.
+"""""
+
+#****************************************   Activity    *******************************************************
+
+#WAD to add n second delay on function execution
+import time
+def n_second_delay(n):
+    def outer_delay(funct):
+        def inner_delay(*args,**kwargs):
+            time.sleep(n)
+            print(funct())
+        return inner_delay
+    return outer_delay
+
+@n_second_delay(1)
+def damm():
+    return "printing damm"
+
+@n_second_delay(5)
+def boom():
+    return "printing boom"
+
+damm()
+boom()
+
+#WAD to execute a function for n numbers of time
+def n_number_function_executer(n):
+    def function_executer(funct):
+        def executer(*args, **kwargs):
+            for i in range(n):
+                print(funct())
+        return executer
+    return function_executer
+
+@n_number_function_executer(3)
+def trio():
+    return "executed trio"
+
+@n_number_function_executer(1)
+def single():
+    return "executed single"
+
+@n_number_function_executer(2)
+def duo():
+    return "executed duo"
+
+duo()
