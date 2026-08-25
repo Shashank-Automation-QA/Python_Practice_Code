@@ -289,3 +289,30 @@ print(f"=========== RECEIPT ==========\n{Name}{space_len}${Price}")
 cc_number = "1234567891015566"
 last_digit = cc_number[len(cc_number)-4:len(cc_number):]
 print( (len(cc_number)-4)*"*" + str(last_digit) )
+
+# Count repeated characters of the String
+# text="Indepedence"
+
+text= "Indepedence"
+for i in text:
+    if text.count(i)>1:
+        print(i,text.count(i))
+
+# get repeated word count
+# text = "Python is easy and Python is powerful"
+text = "Python is easy and Python is powerful"
+lis_text = text.split()
+for word in lis_text:
+    if lis_text.count(word) > 1:
+        print(word,lis_text.count(word))
+
+#ger vowels count of the string
+# text = "Python is easy and Python is powerful"
+text = "Python is easy and Python is powerful"
+count=0
+for i in text:
+    if i in "AEIOUaeiou":
+        count+=1
+print(count)
+
+
