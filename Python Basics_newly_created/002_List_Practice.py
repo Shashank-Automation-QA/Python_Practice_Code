@@ -115,3 +115,29 @@ r = r%len(l)
 print(l[r:]+l[:r])
 
 # Flatten a nested list single level and multi level
+
+
+
+# WAP for below scenario
+# Problem : Extract failed test names
+# test_results = [
+#     ["Login", "PASS"],
+#     ["Logout", "FAIL"],
+#     ["Payment", "PASS"],
+#     ["Search", "FAIL"],
+#     ["Profile", "PASS"]]
+# Expected Result : ["Logout", "Search"]
+test_results = [["Login", "PASS"],["Logout", "FAIL"],["Payment", "PASS"],["Search", "FAIL"],["Profile", "PASS"]]
+l=[]
+for  i in test_results:
+    if i[1]=="FAIL":
+        l.append(i[0])
+print(l)
+
+# Remove Duplicate without set
+duplicate_users = ["John", "Alice", "John", "Bob", "Alice", "David"]
+l=[]
+for i in duplicate_users:
+    if i not in l:
+        l.append(i)
+print(l)
